@@ -1,0 +1,447 @@
+@import 'variables';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-padding-top: 70px;
+}
+
+body {
+  position: relative;
+  background-color: #444;
+  font-family: 'Poppins', sans-serif;
+}
+
+.dot {
+  color: $color-main;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.underline {
+  width: 80px;
+  height: 4px;
+  margin: 20px auto 0 auto;
+  background-color: $color-main;
+}
+
+nav {
+  min-height: 70px;
+  text-transform: uppercase;
+  transition: background-color .5s;
+  z-index: 1;
+
+  &.active {
+    background-color: $color-white;
+
+    a,
+    .nav-link,
+    .fa-bars {
+      color: $color-black;
+    }
+  }
+
+  a,
+  .nav-link {
+    color: $color-white;
+    font-weight: bold;
+    transition: color .5s;
+
+    &:hover,
+    &.active {
+      color: $color-main;
+    }
+  }
+
+  .navbar-brand {
+    i {
+      color: $color-main;
+    }
+  }
+
+  .fa-bars {
+    padding: 10px;
+    color: $color-white;
+    font-size: 1.2em;
+    transition: color .5s;
+
+    &:hover {
+      color: $color-main;
+    }
+  }
+}
+
+header {
+  color: $color-white;
+  overflow: hidden;
+
+  .header-img {
+    position: relative;
+    background-image: url('../img/header_small.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    .header-shadow {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, .45);
+    }
+
+    .header-text {
+      text-align: center;
+
+      h1 {
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 1.6rem;
+      }
+
+      .btn-outline-light {
+        text-transform: uppercase;
+      }
+    }
+
+    .fa-chevron-down {
+      display: block;
+      position: absolute;
+      left: 50%;
+      bottom: 20px;
+      transform: translateX(-50%);
+      color: $color-main;
+      font-size: 30px;
+      animation: arrow 1.6s infinite both;
+      text-shadow: 0 -12px 0 rgba($color: $color-main, $alpha: .3), 0 -24px 0 rgba($color: $color-main, $alpha: .1);
+    }
+  }
+}
+
+.aboutus {
+  i {
+    margin-top: 20px;
+    font-size: 30px;
+  }
+
+  .aboutus-card {
+    border-radius: 10px;
+    transition: box-shadow .3s, transform .3s, opacity .3s;
+
+    &:hover {
+      box-shadow: 0 0 30px 2px rgba(0, 0, 0, .2);
+    }
+
+    .aboutus-card-title {
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+    .aboutus-card-text {
+      font-size: 14px;
+    }
+  }
+}
+
+.features {
+  background-image: url('../img/features_small.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: $color-white;
+
+  .features-shadow {
+    background-color: rgba(0, 0, 0, .5);
+  }
+
+  .features-card {
+    transition: color .3s, transform .3s, opacity .3s;
+
+    &:hover {
+      color: $color-main;
+    }
+
+    i {
+      font-size: 25px;
+    }
+
+    .features-card-title {
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.additional {
+  .carousel-item {
+    max-height: 600px;
+
+    .carousel-caption {
+      background-color: rgba(0, 0, 0, .5);
+    }
+  }
+}
+
+.pricing {
+  background-color: $color-bg;
+
+  .features-card {
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, .2);
+
+    h5 {
+      color: $color-main;
+      text-transform: uppercase;
+    }
+
+    p:last-of-type {
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+
+    .btn {
+      padding: 7px 20px;
+      letter-spacing: 2px;
+
+      &.popular {
+        border-color: $color-main;
+        background-color: $color-main;
+        color: $color-white;
+
+        &:hover {
+          background-color: transparent;
+          color: $color-main;
+        }
+      }
+    }
+  }
+}
+
+.team {
+  background-image: url('../img/teambg_small.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+
+  .shadow {
+    background-color: rgba(0, 0, 0, .45);
+  }
+
+  h2 {
+    color: $color-bg;
+  }
+
+  .card {
+
+    &:nth-of-type(1),
+    &:nth-of-type(2) {
+      .card-img-top {
+        object-position: 80% center;
+      }
+    }
+
+    .card-img-top {
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .card-title {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    i {
+      padding: 10px;
+      color: $color-main;
+      font-size: 1.3em;
+    }
+  }
+}
+
+.achievements {
+  i {
+    padding-bottom: 20px;
+    color: $color-white;
+    text-shadow: 0 0 5px #333;
+    font-size: 3em;
+  }
+
+  .title {
+    color: $color-main;
+    font-weight: bold;
+  }
+
+  .description {
+    color: #888;
+    font-size: 0.8em;
+    text-transform: uppercase;
+  }
+}
+
+.contact {
+  background-image: url('../img/contact_small.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 60%;
+  background-attachment: fixed;
+  color: $color-bg;
+
+  .shadow {
+    background-color: rgba(0, 0, 0, .65);
+  }
+
+  .contact-item {
+    margin: 20px 0;
+
+    h4 {
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .social {
+      i {
+        padding: 20px;
+        color: $color-bg;
+        font-size: 2em;
+      }
+    }
+  }
+}
+
+footer {
+  font-size: 1.4em;
+}
+
+@media (min-width: 992px) {
+  header {
+    .header-img {
+      background-image: url('../img/header_big.jpg');
+    }
+  }
+
+  .underline {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+  }
+
+  .features {
+    background-image: url('../img/features_big.jpg');
+  }
+
+  .pricing {
+
+    .features-card {
+      transition: transform .3s;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  .team {
+    background-image: url('../img/teambg_big.jpg');
+
+    .card {
+      transition: transform .3s;
+
+      &:hover {
+        transform: scale(.95);
+      }
+
+      i {
+        transition: transform .3s;
+
+        &:hover {
+          transform: scale(1.3);
+        }
+      }
+    }
+  }
+
+  .contact {
+    background-image: url('../img/contact_big.jpg');
+
+    .social {
+      i {
+        transition: color .3s;
+
+        &:hover {
+          color: $color-main
+        }
+      }
+    }
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2022-4-3 17:10:7
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation heartbeat
+ * ----------------------------------------
+ */
+@keyframes heartbeat {
+  from {
+    transform: scaleX(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+
+  10% {
+    transform: scaleX(0.91);
+    animation-timing-function: ease-in;
+  }
+
+  17% {
+    transform: scaleX(0.98);
+    animation-timing-function: ease-out;
+  }
+
+  33% {
+    transform: scaleX(0.87);
+    animation-timing-function: ease-in;
+  }
+
+  45% {
+    transform: scaleX(1);
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes arrow {
+  0% {
+    transform: translateX(-50%) translateY(-20px);
+  }
+
+  10% {
+    transform: translateX(-50%) translateY(-20px);
+  }
+
+  90% {
+    transform: translateX(-50%) translateY(70px);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(70px);
+  }
+}
